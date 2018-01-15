@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aglfx.controller.GerenciaBOMController">
+   <children>
+      <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Arquivo">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Novo" />
+                  <MenuItem mnemonicParsing="false" text="Abrir" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Salvar" />
+                  <MenuItem mnemonicParsing="false" text="Salvar Como..." />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Sair" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Opções" />
+          <Menu mnemonicParsing="false" text="Ajuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Sobre" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.5" layoutY="24.0" prefHeight="377.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="300.0" prefHeight="142.0" prefWidth="296.0">
+               <children>
+                  <ListView fx:id="lvProdutos" onMouseClicked="#lvProdOnMouseClicked" prefHeight="263.0" prefWidth="296.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                  <TextField fx:id="txtNomeProd" layoutX="51.0" layoutY="261.0" prefHeight="25.0" prefWidth="225.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="8.0" />
+                  <Label layoutX="8.0" layoutY="265.0" text="Nome:" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="8.0" />
+                  <ButtonBar layoutX="-3.0" layoutY="319.0" prefHeight="40.0" prefWidth="296.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                    <buttons>
+                      <Button fx:id="btnAddProd" mnemonicParsing="false" onMouseClicked="#btnAddProdMouseOnClickListener" text="Adicionar" />
+                        <Button fx:id="btnEditarProd" layoutX="215.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#btnEditarProdMouseOnClickListener" text="Editar" />
+                        <Button fx:id="btnExcluirProd" layoutX="215.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#btnExcluirProdMouseOnClickListener" text="Excluir" />
+                    </buttons>
+                  </ButtonBar>
+                  <Label layoutX="7.0" layoutY="6.0" text="Buscar:" />
+                  <TextField fx:id="txtBuscarProd" layoutX="51.0" layoutY="2.0" prefHeight="25.0" prefWidth="237.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="8.0" />
+                  <Label fx:id="lblErroNomeProd" layoutX="51.0" layoutY="467.0" prefHeight="9.0" prefWidth="337.0" text="*Nome obrigatório" textFill="RED" visible="false" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="8.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="300.0" prefHeight="158.0" prefWidth="0.0">
+               <children>
+                  <TableView fx:id="tableMat" prefHeight="233.0" prefWidth="296.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                    <columns>
+                      <TableColumn editable="false" minWidth="-1.0" prefWidth="65.0" text="Código" />
+                      <TableColumn editable="false" minWidth="-1.0" prefWidth="155.0" text="Nome" />
+                        <TableColumn editable="false" minWidth="-1.0" prefWidth="75.0" text="Quantidade" />
+                    </columns>
+                  </TableView>
+                  <ButtonBar layoutX="48.0" layoutY="304.0" prefHeight="40.0" prefWidth="200.0" />
+                  <TextField fx:id="txtBuscarMat" layoutX="130.0" layoutY="2.0" prefHeight="25.0" prefWidth="237.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="8.0" />
+                  <Label layoutX="10.0" layoutY="6.0" text="Buscar:" />
+                  <TextField fx:id="txtNomeMat" layoutX="162.0" layoutY="470.0" prefHeight="25.0" prefWidth="225.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="8.0" />
+                  <Label layoutX="11.0" layoutY="462.0" text="Nome:" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="8.0" />
+                  <ButtonBar layoutX="14.0" layoutY="525.0" prefHeight="40.0" prefWidth="296.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                     <buttons>
+                        <Button fx:id="btnAddMat" mnemonicParsing="false" text="Adicionar" />
+                        <Button fx:id="btnEditarMat" layoutX="215.0" layoutY="18.0" mnemonicParsing="false" text="Editar" />
+                        <Button fx:id="btnExcluirMat" layoutX="215.0" layoutY="18.0" mnemonicParsing="false" text="Excluir" />
+                     </buttons>
+                  </ButtonBar>
+                  <TextField fx:id="txtCodMaterial" layoutX="51.0" layoutY="500.0" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="196.0" />
+                  <Spinner fx:id="spnQuantidadeMat" layoutX="293.0" layoutY="500.0" prefHeight="25.0" prefWidth="95.0" AnchorPane.bottomAnchor="63.0" AnchorPane.rightAnchor="8.0" />
+                  <Label layoutX="5.0" layoutY="504.0" text="Código:" AnchorPane.bottomAnchor="67.0" />
+                  <Label layoutX="224.0" layoutY="504.0" text="Quantidade:" AnchorPane.bottomAnchor="67.0" AnchorPane.rightAnchor="107.0" />
+                  <Label fx:id="lblErroNomeMat" layoutX="51.0" layoutY="467.0" prefHeight="17.0" prefWidth="337.0" text="*Nome obrigatório" textFill="RED" visible="false" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="196.0" />
+                  <Label fx:id="lblErroNomeCodigoMat" layoutX="51.0" layoutY="510.0" prefHeight="17.0" prefWidth="149.0" text="*Código obrigatório" textFill="RED" visible="false" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="51.0" />
+                  <Label fx:id="lblErroQuantidadeMat" layoutX="293.0" layoutY="510.0" prefHeight="17.0" prefWidth="134.0" text="*Quantidade obrigatória" textFill="RED" visible="false" AnchorPane.bottomAnchor="46.0" AnchorPane.rightAnchor="8.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
