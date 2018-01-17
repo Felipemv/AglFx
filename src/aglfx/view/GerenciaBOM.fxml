@@ -14,6 +14,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aglfx.controller.GerenciaBOMController">
    <children>
@@ -59,11 +60,11 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="300.0" prefHeight="158.0" prefWidth="0.0">
                <children>
-                  <TableView fx:id="tableMat" prefHeight="233.0" prefWidth="296.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                  <TableView fx:id="tableMat" onMouseClicked="#tableMatOnMouseClicked" prefHeight="233.0" prefWidth="296.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
                     <columns>
-                      <TableColumn editable="false" minWidth="-1.0" prefWidth="65.0" text="Código" />
-                      <TableColumn editable="false" minWidth="-1.0" prefWidth="155.0" text="Nome" />
-                        <TableColumn editable="false" minWidth="-1.0" prefWidth="75.0" text="Quantidade" />
+                      <TableColumn fx:id="colCodigoMat" editable="false" minWidth="-1.0" prefWidth="65.0" text="Código" />
+                      <TableColumn fx:id="colNomeMat" editable="false" minWidth="-1.0" prefWidth="155.0" text="Nome" />
+                        <TableColumn fx:id="colQuantidadeMat" editable="false" minWidth="-1.0" prefWidth="75.0" text="Quantidade" />
                     </columns>
                   </TableView>
                   <ButtonBar layoutX="48.0" layoutY="304.0" prefHeight="40.0" prefWidth="200.0" />
@@ -73,9 +74,9 @@
                   <Label layoutX="11.0" layoutY="462.0" text="Nome:" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="8.0" />
                   <ButtonBar layoutX="14.0" layoutY="525.0" prefHeight="40.0" prefWidth="296.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
                      <buttons>
-                        <Button fx:id="btnAddMat" mnemonicParsing="false" text="Adicionar" />
-                        <Button fx:id="btnEditarMat" layoutX="215.0" layoutY="18.0" mnemonicParsing="false" text="Editar" />
-                        <Button fx:id="btnExcluirMat" layoutX="215.0" layoutY="18.0" mnemonicParsing="false" text="Excluir" />
+                        <Button fx:id="btnAddMat" mnemonicParsing="false" onMouseClicked="#btnAddMatMouseOnClickListener" text="Adicionar" />
+                        <Button fx:id="btnEditarMat" layoutX="215.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#btnEditarMatMouseOnClickListener" text="Editar" />
+                        <Button fx:id="btnExcluirMat" layoutX="215.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#btnExcluirMatMouseOnClickListener" text="Excluir" />
                      </buttons>
                   </ButtonBar>
                   <TextField fx:id="txtCodMaterial" layoutX="51.0" layoutY="500.0" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="196.0" />
@@ -83,8 +84,9 @@
                   <Label layoutX="5.0" layoutY="504.0" text="Código:" AnchorPane.bottomAnchor="67.0" />
                   <Label layoutX="224.0" layoutY="504.0" text="Quantidade:" AnchorPane.bottomAnchor="67.0" AnchorPane.rightAnchor="107.0" />
                   <Label fx:id="lblErroNomeMat" layoutX="51.0" layoutY="467.0" prefHeight="17.0" prefWidth="337.0" text="*Nome obrigatório" textFill="RED" visible="false" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="196.0" />
-                  <Label fx:id="lblErroNomeCodigoMat" layoutX="51.0" layoutY="510.0" prefHeight="17.0" prefWidth="149.0" text="*Código obrigatório" textFill="RED" visible="false" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="51.0" />
+                  <Label fx:id="lblErroCodigoMat" layoutX="51.0" layoutY="510.0" prefHeight="17.0" prefWidth="149.0" text="*Código obrigatório" textFill="RED" visible="false" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="51.0" />
                   <Label fx:id="lblErroQuantidadeMat" layoutX="293.0" layoutY="510.0" prefHeight="17.0" prefWidth="134.0" text="*Quantidade obrigatória" textFill="RED" visible="false" AnchorPane.bottomAnchor="46.0" AnchorPane.rightAnchor="8.0" />
+                  <Line endX="100.0" startX="-100.0" />
                </children>
             </AnchorPane>
         </items>
