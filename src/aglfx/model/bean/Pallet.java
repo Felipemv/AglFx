@@ -14,8 +14,9 @@ import javafx.geometry.Point2D;
 public class Pallet {
     
     private int id;
-    private String nome;
+    private String cod;
     private Point2D coordenada;
+    private String bloco;
 
     public int getId() {
         return id;
@@ -25,12 +26,12 @@ public class Pallet {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getCod() {
+        return cod;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setCod(String cod) {
+        this.cod = cod;
     }
 
     public Point2D getCoordenada() {
@@ -41,7 +42,11 @@ public class Pallet {
         this.coordenada = coordenada;
     }
     
-    
-    
-    
+    public String getBloco() {
+        return bloco;
+    }
+
+    public void setBloco(String bloco) {
+        this.bloco = bloco;
+    }
 }
