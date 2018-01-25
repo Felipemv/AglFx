@@ -41,13 +41,13 @@ public class ProdutoDAO {
             
                 stmt.executeUpdate();
             }else{
-                JOptionPane.showMessageDialog(null, "O produto cadastrado já existe");
+//                JOptionPane.showMessageDialog(null, "O produto cadastrado já existe");
                 return;
             }
             
             
             
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+//            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao salvar: "+ex);
         }finally{

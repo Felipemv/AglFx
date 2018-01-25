@@ -20,6 +20,7 @@ public class AglFx extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("view/ColetorDeCoordenadas.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("view/GerenciaBOM.fxml"));
         
         Scene scene = new Scene(root);
         

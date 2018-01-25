@@ -47,11 +47,11 @@ public class MaterialDAO {
             
                 stmt.executeUpdate();
             }else{
-                JOptionPane.showMessageDialog(null, "O Material cadastrado já existe para esse produto");
+//                JOptionPane.showMessageDialog(null, "O Material cadastrado já existe para esse produto");
                 return;
             }
             
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+            //JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao salvar: "+ex);
         }finally{

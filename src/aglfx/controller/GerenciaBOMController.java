@@ -9,10 +9,18 @@ import aglfx.model.bean.Material;
 import aglfx.model.bean.Produto;
 import aglfx.model.dao.MaterialDAO;
 import aglfx.model.dao.ProdutoDAO;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -311,6 +319,43 @@ public class GerenciaBOMController implements Initializable {
 
         SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, Integer.MAX_VALUE, 1);
         spnQuantidadeMat.setValueFactory(valueFactory);
+        
+        
+        
+//        try{
+//            InputStream is = new FileInputStream("bom.txt");
+//            InputStreamReader isr = new InputStreamReader(is);
+//            BufferedReader br = new BufferedReader(isr);
+//            
+//            Produto p = new Produto();
+//            Material m = new Material();
+//            ProdutoDAO pd = new ProdutoDAO();
+//            MaterialDAO md = new MaterialDAO();
+//            
+//            int index = -1;
+//            String text = br.readLine();
+//            
+//            while(text!= null){
+//                if(text.startsWith("---")){
+//                    index++;
+//                    p.setNome(text.substring(3));
+//                    pd.create(p);
+//                }else{
+//                    String s[] = text.split("#");
+//                    m.setCod(s[0]);
+//                    m.setNome(s[1]);
+//                    m.setCod(s[2]);
+//                    m.setId_produto(index);
+//                    md.create(m);
+//                }
+//                text = br.readLine();
+//            }
+//        }catch(FileNotFoundException e){
+//            
+//        } catch (IOException ex) {
+//            Logger.getLogger(GerenciaBOMController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
     }
 
     private void carregarListaProdCompleta() {
