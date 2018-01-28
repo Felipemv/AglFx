@@ -34,7 +34,7 @@
       </MenuBar>
       <ScrollPane layoutY="27.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="27.0">
          <content>
-            <StackPane fx:id="stack" onMouseClicked="#stackOnMouseClickedListener" onMouseDragged="#stackOnMouseDraggedListener" onMouseEntered="#stackOnMouseEnteredListener" onMouseMoved="#stackOnMouseMovedListener" onMousePressed="#stackOnMousePressedListener" onMouseReleased="#stackOnMouseReleasedListener" prefHeight="521.0" prefWidth="548.0" />
+            <StackPane fx:id="stack" onMouseClicked="#stackOnMouseClickedListener" onMouseDragged="#stackOnMouseDraggedListener" onMouseMoved="#stackOnMouseMovedListener" onMousePressed="#stackOnMousePressedListener" onMouseReleased="#stackOnMouseReleasedListener" prefHeight="521.0" prefWidth="548.0" />
          </content>
       </ScrollPane>
       <Pane fx:id="paneFerramentas" layoutX="600.0" layoutY="27.0" prefHeight="600.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
@@ -42,8 +42,8 @@
             <Label layoutX="5.0" layoutY="6.0" text="Ferramentas de Edição:" />
             <ButtonBar buttonMinWidth="60.0" layoutY="45.0" prefHeight="40.0" prefWidth="228.0">
                <buttons>
-                    <ToggleButton fx:id="tBtnBloco" prefHeight="25.0" prefWidth="60.0" text="Bloco" />
-                    <ToggleButton fx:id="tBtnPonto" prefHeight="25.0" prefWidth="60.0" selected="true" text="Ponto" />
+                    <ToggleButton fx:id="tBtnBloco" prefHeight="25.0" prefWidth="60.0" selected="true" text="Bloco" />
+                    <ToggleButton fx:id="tBtnPonto" prefHeight="25.0" prefWidth="60.0" text="Ponto" />
                     <ToggleButton fx:id="tBtnMover" prefHeight="25.0" prefWidth="60.0" text="Mover" />
                </buttons>
             </ButtonBar>
